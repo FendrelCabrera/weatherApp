@@ -3,7 +3,7 @@ import axios from "axios";
 let apiKey = "aad8020de6df4d8f928184848230301"
 
 const getSuggestions = async (query) => {
-    let url = `https://dreamy-kelpie-72057e.netlify.app/api/v1/search.json?key=${apiKey}&q=${query}`
+    let url = `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`
 
     try {
         let resp = await axios.get(url)
@@ -27,7 +27,7 @@ const getSuggestions = async (query) => {
 }
 
 const getPlaceDetails = async (query) => {
-    let url = `https://dreamy-kelpie-72057e.netlify.app/api/v1/current.json?key=${apiKey}&q=${query}&aqi=no`
+    let url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`
 
     try {
         let resp = await axios.get(url)
