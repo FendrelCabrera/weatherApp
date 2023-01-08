@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let apiKey = aad8020de6df4d8f928184848230301
+let apiKey = "aad8020de6df4d8f928184848230301"
 
 const getSuggestions = async (query) => {
     let url = `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`
