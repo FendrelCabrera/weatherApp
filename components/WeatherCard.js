@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const WeatherCard = ({ placeDetails }) => {
     return (
-        <div className=" rounded-lg border-amber-900 bg-red-200 border-8 p-10 hover:animate-pulse text-xl h-2/3 w-5/12">
+        <div className=" rounded-lg border-amber-900 bg-red-200 border-8 p-10 hover:skew-y-3  text-xl h-2/3 w-5/12">
             <div className="grid grid-cols-2 justify-items-evenly">
             
                 <div className="col-span-2 flex justify-center">

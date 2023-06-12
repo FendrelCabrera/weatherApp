@@ -37,7 +37,7 @@ const InputBox = () => {
                 <ul className="bg-white w-96">
                     {
                         suggestions.map((item, i) => (
-                            <li key={i} className="border-b-2">
+                            <li key={i} className="border-b-2 cursor-pointer">
                                 <a className="text-ellipsis" onClick={optionClick}>{item}</a>
                             </li>
                         ))

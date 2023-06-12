@@ -2,6 +2,34 @@ import axios from "axios";
 
 let apiKey = "aad8020de6df4d8f928184848230301"
 
+
+const getSuggestions = (query) => {
+    let url = `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`
+
+    return fetch(url).then((data) => data.json()).then(
+        (data) => {
+            return data.map(
+                (item) => {
+                    let string = item.name
+
+                    if(item.region != "")
+                        string += `, ${item.region}`
+                    if(item.country != "")
+                        string += `, ${item.country}`
+
+                    return string
+                }
+            )
+        }
+    ).then((data) => data.slice(0, 7))
+    .catch((e) => {
+        console.log(e)
+        return []
+    })
+}
+
+
+/*
 const getSuggestions = async (query) => {
     let url = `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${query}`
 
@@ -25,6 +53,7 @@ const getSuggestions = async (query) => {
         return []
     }
 }
+*/
 
 const getPlaceDetails = async (query) => {
     let url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}&aqi=no`
